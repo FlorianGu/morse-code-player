@@ -10,8 +10,8 @@ rate = 96000  # 生成、播放摩尔斯电码音频的采样率
 duration = 0.06  # 摩尔斯电码中“点”的长度(秒)，用来控制发报速度
 o = zeros(int(rate * duration))  # 以“点”的长度作为单位间隔
 p = append(sin(2 * pi * freq / rate * arange(rate * duration)), o)  # “嘀”的正弦波 + 1份单位间隔
-q = append(sin(2 * pi * freq / rate * arange(rate * duration * 3)), o)  # “”嗒的正弦波 + 1份单位间隔
-encode = {  # 定义常用字符与摩尔斯电码间的映射
+q = append(sin(2 * pi * freq / rate * arange(rate * duration * 3)), o)  # “嗒”的正弦波 + 1份单位间隔
+encode = {  # 定义常用字符到摩尔斯电码间的映射
     'A': [p, q],
     'B': [q, p, p, p],
     'C': [q, p, q, p],
